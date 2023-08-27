@@ -25,7 +25,7 @@ function ensureAuthenticated(req:Request,res:Response,next:NextFunction){
 
 const app = express();
 
-
+app.use(express.json());
 
 // initializing a session
 
@@ -91,6 +91,14 @@ app.get('/profile',ensureAuthenticated,(req:Request, res:Response)=>{
 app.get('/',(req:Request,res:Response)=>{
   res.send('home Page ');
 })
+
+app.post('/webHooks',(req:Request,res:Response)=>{
+  res.send("web hooks");
+  console.log(req.body);
+})
+
+
+
 
 app.listen(5000,()=>{
   console.log("Server is listening on http://localhost:5000");

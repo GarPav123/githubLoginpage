@@ -1,0 +1,21 @@
+name: PR Merge Workflow
+on: 
+  pull_request: 
+    types: 
+      - closed
+
+jobs:
+  send-pull-request-info:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with: 
+          node-version: '14'
+      
+      - name: Run Backend Script
+        run: |
+              
