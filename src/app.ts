@@ -92,10 +92,14 @@ app.get('/',(req:Request,res:Response)=>{
   res.send('home Page ');
 })
 
+app.get('/webHooks',(req:Request,res:Response)=>{
+  res.send("web hooks");
+})
 app.post('/webHooks',(req:Request,res:Response)=>{
   res.send("web hooks");
   console.log(req.body);
 })
+
 
 
 
